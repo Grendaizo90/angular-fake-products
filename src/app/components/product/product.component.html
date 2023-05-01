@@ -1,10 +1,25 @@
-<div
-    class="bg-slate-400 shadow rounded-md w-full p-6 flex flex-col items-center"
->
+<div class="shadow rounded-md p-6 flex flex-col items-center gap-4">
     <div class="rounded overflow-hidden w-1/4 mb-4">
         <img [src]="product.image" alt="product-image" />
     </div>
     <h2 class="text-lg">
         {{ product.title }}
     </h2>
+    <p>Price: {{ product.price | currency }}</p>
+
+    <button
+        class="rounded-md bg-yellow-400 shadow px-3 py-1 hover:shadow-md min-w-[120px]"
+        [ngClass]="{
+            'bg-yellow-400': !details,
+            'bg-yellow-500': details
+        }"
+        (click)="details = !details"
+    >
+        {{ details ? "Hide" : "Show" }} details
+    </button>
+
+    <div class="font-light text-center" *ngIf="details">
+        <p class="mb-4">{{ product.description }}</p>
+        <p><span class="font-normal">Rate:</span> {{ product.rating.rate }}</p>
+    </div>
 </div>
