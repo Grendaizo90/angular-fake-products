@@ -10,6 +10,7 @@ import { GlobalErrorComponent } from './components/global-error/global-error.com
 import { ProductFilterPipe } from './pipes/product-filter.pipe';
 import { ModalComponent } from './components/modal/modal.component';
 import { CreateProductComponent } from './components/create-product/create-product.component';
+import { FocusDirective } from './directives/focus.directive';
 
 @NgModule({
     declarations: [
@@ -20,6 +21,7 @@ import { CreateProductComponent } from './components/create-product/create-produ
         ProductFilterPipe,
         ModalComponent,
         CreateProductComponent,
+        FocusDirective,
     ],
     imports: [BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule],
     providers: [],

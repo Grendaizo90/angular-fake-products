@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
     selector: 'app-create-product',
@@ -7,7 +8,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
     styleUrls: ['./create-product.component.css'],
 })
 export class CreateProductComponent implements OnInit {
-    constructor() {}
+    constructor(public modalService: ModalService) {}
 
     minTitleLength = 5;
 

@@ -35,6 +35,9 @@
     ></app-product>
 </div>
 
-<app-modal title="Create product">
+<app-modal
+    *ngIf="modalService.isVisible$ | async"
+    title="Create product"
+>
     <app-create-product></app-create-product>
 </app-modal>
