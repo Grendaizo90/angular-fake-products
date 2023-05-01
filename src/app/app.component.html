@@ -1,15 +1,27 @@
 <app-global-error></app-global-error>
 <app-header></app-header>
+
+<input
+    type="text"
+    class="border-b py-2 w-1/3 mb-8 bg-transparent focus:outline-none text-white"
+    placeholder="Filter products..."
+    [(ngModel)]="term"
+/>
+
 <p
     class="font-medium"
     *ngIf="loading"
 >
     Loading...
 </p>
-<div class="grid grid-cols-12 gap-6">
+
+<div
+    *ngIf="products$ | async as products"
+    class="grid grid-cols-12 gap-6"
+>
     <app-product
         ngClass="col-span-12 lg:col-span-6"
-        *ngFor="let product of products$ | async; let i = index"
+        *ngFor="let product of products | productFilter : term; let i = index"
         [product]="product"
     ></app-product>
 </div>

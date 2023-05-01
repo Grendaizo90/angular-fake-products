@@ -12,7 +12,7 @@ export class ProductService {
 
     getAll(): Observable<Product[]> {
         return this.http
-            .get<Product[]>('https://fakestoreapi.com/products1', {
+            .get<Product[]>('https://fakestoreapi.com/products', {
                 params: new HttpParams({
                     fromObject: {
                         limit: 5,

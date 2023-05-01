@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from './models/product';
-import { products as data } from './data/data';
 import { ProductService } from './services/product.service';
 import { Observable, tap } from 'rxjs';
 
@@ -11,15 +10,14 @@ import { Observable, tap } from 'rxjs';
 })
 export class AppComponent implements OnInit {
     title = 'Palping Angular';
-    products$: Observable<Product[]>;
     loading = false;
+    products$: Observable<Product[]>;
+    term = '';
 
     constructor(private productsService: ProductService) {}
 
     ngOnInit(): void {
         this.loading = true;
-        this.products$ = this.productsService
-            .getAll()
-            .pipe(tap(() => (this.loading = false)));
+        this.products$ = this.productsService.getAll().pipe(tap(() => (this.loading = false)));
     }
 }
