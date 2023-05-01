@@ -1,4 +1,6 @@
-<div class="shadow rounded-md p-6 flex flex-col items-center gap-4">
+<div
+    class="shadow rounded-md p-6 flex flex-col items-center gap-4 text-white border"
+>
     <div class="rounded overflow-hidden w-1/4 mb-4">
         <img [src]="product.image" alt="product-image" />
     </div>
@@ -10,8 +12,8 @@
     <button
         class="rounded-md bg-yellow-400 shadow px-3 py-1 hover:shadow-md min-w-[120px]"
         [ngClass]="{
-            'bg-yellow-400': !details,
-            'bg-yellow-500': details
+            'bg-yellow-500': !details,
+            'bg-yellow-600': details
         }"
         (click)="details = !details"
     >
