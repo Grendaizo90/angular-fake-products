@@ -1,0 +1,25 @@
+<form
+    class="flex flex-col"
+    [formGroup]="form"
+    (ngSubmit)="submit()"
+>
+    <input
+        type="text"
+        placeholder="Type product name..."
+        class="border-b bg-transparent focus:outline-none text-white py-3"
+        formControlName="title"
+    />
+
+    <div class="h-6 text-red-600 text-xs">
+        <p *ngIf="title.errors?.minlength && title.touched">
+            Min product name length is {{ minTitleLength }} symbols
+        </p>
+    </div>
+
+    <button
+        type="submit"
+        class="px-4 py-2 bg-blue-500 rounded text-white"
+    >
+        Create
+    </button>
+</form>

@@ -12,6 +12,8 @@
                 "plugin:prettier/recommended"
             ],
             "rules": {
+                "@angular-eslint/no-empty-lifecycle-method": "off",
+                "@typescript-eslint/no-empty-function": "off",
                 "@angular-eslint/directive-selector": [
                     "error",
                     {
@@ -34,6 +36,14 @@
             "files": ["*.html"],
             "extends": ["plugin:@angular-eslint/template/recommended"],
             "rules": {}
+        },
+        {
+            "files": ["*.html"],
+            "excludedFiles": ["*inline-template-*.component.html"],
+            "extends": ["plugin:prettier/recommended"],
+            "rules": {
+                "prettier/prettier": ["error", { "parser": "angular" }]
+            }
         }
     ]
 }

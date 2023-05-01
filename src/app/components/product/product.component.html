@@ -1,8 +1,9 @@
-<div
-    class="shadow rounded-md p-6 flex flex-col items-center gap-4 text-white border"
->
+<div class="shadow rounded-md p-6 flex flex-col items-center gap-4 text-white border">
     <div class="rounded overflow-hidden w-1/4 mb-4">
-        <img [src]="product.image" alt="product-image" />
+        <img
+            [src]="product.image"
+            alt="product-image"
+        />
     </div>
     <h2 class="text-lg">
         {{ product.title }}
@@ -20,7 +21,10 @@
         {{ details ? "Hide" : "Show" }} details
     </button>
 
-    <div class="font-light text-center" *ngIf="details">
+    <div
+        class="font-light text-center"
+        *ngIf="details"
+    >
         <p class="mb-4">{{ product.description }}</p>
         <p><span class="font-normal">Rate:</span> {{ product.rating.rate }}</p>
     </div>
